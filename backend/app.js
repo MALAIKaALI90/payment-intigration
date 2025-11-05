@@ -1,9 +1,8 @@
 import Stripe from "stripe"
 import express from "express"
 import cors from "cors"
-import dotenv from "dotenv"
-
-dotenv.config({ path: "./config/config.env" })
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express()
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
@@ -42,3 +41,4 @@ app.listen(process.env.PORT,()=>{
     
 })
 export default app
+

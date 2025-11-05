@@ -4,7 +4,7 @@ import React from "react";
 const ProductCard = ({ product }) => {
     const handleCheckout=async()=>{
         try {
-            const response=await axios.post("http://localhost:8000/create-checkout-sessions",{
+            const response=await axios.post(`${import.meta.env.VITE_BACKEND_URL}/create-checkout-sessions`,{
                 product,
             })
             window.location.href=response.data.url
